@@ -27,7 +27,7 @@ define(['exports', 'aurelia-dependency-injection', 'aurelia-task-queue', 'aureli
 
     _createClass(FooterView, [{
       key: 'bind',
-      value: function bind(bindingContext, overrideContext) {
+      value: function bind() {
         if (this.defaultModule) {
           this.defaultInstruction = {
             viewModel: this.defaultModule

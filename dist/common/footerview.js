@@ -38,7 +38,7 @@ var FooterView = (function () {
 
   _createClass(FooterView, [{
     key: 'bind',
-    value: function bind(bindingContext, overrideContext) {
+    value: function bind() {
       if (this.defaultModule) {
         this.defaultInstruction = {
           viewModel: this.defaultModule

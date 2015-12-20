@@ -34,7 +34,7 @@ export class FooterView {
     router.registerFooter(this);
   }
 
-  bind(bindingContext, overrideContext) {
+  bind() {
     if(this.defaultModule) {
       this.defaultInstruction = {
         viewModel: this.defaultModule 
