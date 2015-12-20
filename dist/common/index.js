@@ -7,6 +7,8 @@ exports.configure = configure;
 
 var _aureliaRouter = require('aurelia-router');
 
+var _updatefooterstep = require('./updatefooterstep');
+
 function configure(aurelia) {
   _aureliaRouter.Router.prototype.footer = null;
   _aureliaRouter.Router.prototype.registerFooter = function (footer) {
@@ -17,7 +19,7 @@ function configure(aurelia) {
   };
 
   var filters = aurelia.container.get(_aureliaRouter.RouteFilterContainer);
-  filters.addStep('precommit', UpdateFooterStep);
+  filters.addStep('precommit', _updatefooterstep.UpdateFooterStep);
 
   aurelia.globalResources(['footerview']);
 }

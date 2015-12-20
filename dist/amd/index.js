@@ -1,4 +1,4 @@
-define(['exports', 'aurelia-router'], function (exports, _aureliaRouter) {
+define(['exports', 'aurelia-router', './updatefooterstep'], function (exports, _aureliaRouter, _updatefooterstep) {
   'use strict';
 
   Object.defineProperty(exports, '__esModule', {
@@ -16,7 +16,7 @@ define(['exports', 'aurelia-router'], function (exports, _aureliaRouter) {
     };
 
     var filters = aurelia.container.get(_aureliaRouter.RouteFilterContainer);
-    filters.addStep('precommit', UpdateFooterStep);
+    filters.addStep('precommit', _updatefooterstep.UpdateFooterStep);
 
     aurelia.globalResources(['footerview']);
   }

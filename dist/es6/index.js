@@ -1,4 +1,5 @@
 import {Router, RouteFilterContainer} from 'aurelia-router';
+import {UpdateFooterStep} from './updatefooterstep';
 
 export function configure(aurelia) {
   Router.prototype.footer = null;

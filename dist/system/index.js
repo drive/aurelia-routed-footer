@@ -1,7 +1,7 @@
-System.register(['aurelia-router'], function (_export) {
+System.register(['aurelia-router', './updatefooterstep'], function (_export) {
   'use strict';
 
-  var Router, RouteFilterContainer;
+  var Router, RouteFilterContainer, UpdateFooterStep;
 
   _export('configure', configure);
 
@@ -24,6 +24,8 @@ System.register(['aurelia-router'], function (_export) {
     setters: [function (_aureliaRouter) {
       Router = _aureliaRouter.Router;
       RouteFilterContainer = _aureliaRouter.RouteFilterContainer;
+    }, function (_updatefooterstep) {
+      UpdateFooterStep = _updatefooterstep.UpdateFooterStep;
     }],
     execute: function () {}
   };
