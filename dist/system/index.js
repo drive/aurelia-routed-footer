@@ -1,7 +1,7 @@
 System.register(['aurelia-router'], function (_export) {
   'use strict';
 
-  var Router;
+  var Router, RouteFilterContainer;
 
   _export('configure', configure);
 
@@ -23,6 +23,7 @@ System.register(['aurelia-router'], function (_export) {
   return {
     setters: [function (_aureliaRouter) {
       Router = _aureliaRouter.Router;
+      RouteFilterContainer = _aureliaRouter.RouteFilterContainer;
     }],
     execute: function () {}
   };

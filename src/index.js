@@ -1,4 +1,4 @@
-import {Router} from 'aurelia-router';
+import {Router, RouteFilterContainer} from 'aurelia-router';
 
 export function configure(aurelia) {
   Router.prototype.footer = null;
