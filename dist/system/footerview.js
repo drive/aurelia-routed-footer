@@ -60,7 +60,7 @@ System.register(['aurelia-dependency-injection', 'aurelia-task-queue', 'aurelia-
           this.currentController = null;
           this.currentViewModel = null;
 
-          router.registerFooter(this);
+          router.registerFooterViewPort(this);
         }
 
         _createClass(FooterView, [{

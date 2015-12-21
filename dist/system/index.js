@@ -7,7 +7,7 @@ System.register(['aurelia-router', './updatefooterstep'], function (_export) {
 
   function configure(aurelia) {
     Router.prototype.footer = null;
-    Router.prototype.registerFooter = function (footer) {
+    Router.prototype.registerFooterViewPort = function (footer) {
       this.footer = footer;
     };
     Router.prototype.setFooter = function (footerModule) {

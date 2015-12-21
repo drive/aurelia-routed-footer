@@ -22,7 +22,7 @@ define(['exports', 'aurelia-dependency-injection', 'aurelia-task-queue', 'aureli
       this.currentController = null;
       this.currentViewModel = null;
 
-      router.registerFooter(this);
+      router.registerFooterViewPort(this);
     }
 
     _createClass(FooterView, [{

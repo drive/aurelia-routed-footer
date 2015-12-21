@@ -11,7 +11,7 @@ var _updatefooterstep = require('./updatefooterstep');
 
 function configure(aurelia) {
   _aureliaRouter.Router.prototype.footer = null;
-  _aureliaRouter.Router.prototype.registerFooter = function (footer) {
+  _aureliaRouter.Router.prototype.registerFooterViewPort = function (footer) {
     this.footer = footer;
   };
   _aureliaRouter.Router.prototype.setFooter = function (footerModule) {

@@ -31,7 +31,7 @@ export class FooterView {
     this.currentController = null;
     this.currentViewModel = null;
 
-    router.registerFooter(this);
+    router.registerFooterViewPort(this);
   }
 
   bind() {
