@@ -1,7 +1,7 @@
 System.register(['aurelia-router', './updatefooterstep'], function (_export) {
   'use strict';
 
-  var Router, RouteFilterContainer, UpdateFooterStep;
+  var Router, PipelineProvider, UpdateFooterStep;
 
   _export('configure', configure);
 
@@ -14,7 +14,7 @@ System.register(['aurelia-router', './updatefooterstep'], function (_export) {
       this.footer.setFooter(footerModule);
     };
 
-    var filters = aurelia.container.get(RouteFilterContainer);
+    var filters = aurelia.container.get(PipelineProvider);
     filters.addStep('precommit', UpdateFooterStep);
 
     aurelia.globalResources(['footerview']);
@@ -23,7 +23,7 @@ System.register(['aurelia-router', './updatefooterstep'], function (_export) {
   return {
     setters: [function (_aureliaRouter) {
       Router = _aureliaRouter.Router;
-      RouteFilterContainer = _aureliaRouter.RouteFilterContainer;
+      PipelineProvider = _aureliaRouter.PipelineProvider;
     }, function (_updatefooterstep) {
       UpdateFooterStep = _updatefooterstep.UpdateFooterStep;
     }],

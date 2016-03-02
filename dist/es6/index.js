@@ -1,4 +1,4 @@
-import {Router, RouteFilterContainer} from 'aurelia-router';
+import {Router, PipelineProvider} from 'aurelia-router';
 import {UpdateFooterStep} from './updatefooterstep';
 
 export function configure(aurelia) {
@@ -10,7 +10,7 @@ export function configure(aurelia) {
     this.footer.setFooter(footerModule);
   };
 
-  let filters = aurelia.container.get(RouteFilterContainer);
+  let filters = aurelia.container.get(PipelineProvider);
   filters.addStep('precommit', UpdateFooterStep);
 
   aurelia.globalResources(['footerview']);
