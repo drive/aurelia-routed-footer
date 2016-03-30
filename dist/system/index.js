@@ -22,7 +22,7 @@ System.register(['aurelia-router', './updatefooterstep'], function (_export, _co
         var filters = aurelia.container.get(PipelineProvider);
         filters.addStep('precommit', UpdateFooterStep);
 
-        aurelia.globalResources(['footerview']);
+        aurelia.globalResources(['./footerview']);
       }
 
       _export('configure', configure);

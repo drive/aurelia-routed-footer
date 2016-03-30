@@ -13,5 +13,5 @@ export function configure(aurelia) {
   let filters = aurelia.container.get(PipelineProvider);
   filters.addStep('precommit', UpdateFooterStep);
 
-  aurelia.globalResources(['footerview']);
+  aurelia.globalResources(['./footerview']);
 }

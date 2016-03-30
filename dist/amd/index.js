@@ -17,6 +17,6 @@ define(['exports', 'aurelia-router', './updatefooterstep'], function (exports, _
     var filters = aurelia.container.get(_aureliaRouter.PipelineProvider);
     filters.addStep('precommit', _updatefooterstep.UpdateFooterStep);
 
-    aurelia.globalResources(['footerview']);
+    aurelia.globalResources(['./footerview']);
   }
 });
