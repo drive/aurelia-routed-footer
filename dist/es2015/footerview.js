@@ -1,25 +1,21 @@
-import {Container, inject} from 'aurelia-dependency-injection';
-import {TaskQueue} from 'aurelia-task-queue';
-import {CompositionEngine, ViewSlot, ViewResources, customElement, bindable, noView} from 'aurelia-templating';
-import {bindingMode} from 'aurelia-binding';
-import {Router} from 'aurelia-router';
-import {DOM} from 'aurelia-pal';
+var _dec, _dec2, _dec3, _dec4, _class;
 
-@customElement('footer-view')
-@bindable({
-  name:'defaultView',
-  attribute:'default-view',
-  defaultBindingMode: bindingMode.oneTime  
-})
-@bindable({
-  name:'defaultModule',
-  attribute:'default-module',
-  defaultBindingMode: bindingMode.oneTime  
-})
-@noView
-@inject(DOM.Element, Container, CompositionEngine, ViewSlot, ViewResources, TaskQueue, Router)
-export class FooterView {
-  
+import { Container, inject } from 'aurelia-dependency-injection';
+import { TaskQueue } from 'aurelia-task-queue';
+import { CompositionEngine, ViewSlot, ViewResources, customElement, bindable, noView } from 'aurelia-templating';
+import { bindingMode } from 'aurelia-binding';
+import { Router } from 'aurelia-router';
+import { DOM } from 'aurelia-pal';
+
+export let FooterView = (_dec = customElement('footer-view'), _dec2 = bindable({
+  name: 'defaultView',
+  attribute: 'default-view',
+  defaultBindingMode: bindingMode.oneTime
+}), _dec3 = bindable({
+  name: 'defaultModule',
+  attribute: 'default-module',
+  defaultBindingMode: bindingMode.oneTime
+}), _dec4 = inject(DOM.Element, Container, CompositionEngine, ViewSlot, ViewResources, TaskQueue, Router), _dec(_class = _dec2(_class = _dec3(_class = noView(_class = _dec4(_class = class FooterView {
 
   constructor(element, container, compositionEngine, viewSlot, viewResources, taskQueue, router) {
     this.element = element;
@@ -35,13 +31,13 @@ export class FooterView {
   }
 
   bind() {
-    if(this.defaultModule) {
+    if (this.defaultModule) {
       this.defaultInstruction = {
-        viewModel: this.defaultModule 
+        viewModel: this.defaultModule
       };
     } else if (this.defaultView) {
       this.defaultInstruction = {
-        view: this.defaultView 
+        view: this.defaultView
       };
     } else {
       throw new Error("default module or default view must be supplied");
@@ -50,7 +46,7 @@ export class FooterView {
 
   setFooter(footer) {
     let instructionBase = this.defaultInstruction;
-    if(footer) {
+    if (footer) {
       instructionBase = {
         viewModel: footer
       };
@@ -66,7 +62,7 @@ export class FooterView {
     this.currentInstruction = instruction;
     this.taskQueue.queueMicroTask(() => processInstruction(this, this.currentInstruction));
   }
-}
+}) || _class) || _class) || _class) || _class) || _class);
 
 function createInstruction(composer, instruction) {
   return Object.assign(instruction, {

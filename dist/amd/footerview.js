@@ -1,17 +1,30 @@
 define(['exports', 'aurelia-dependency-injection', 'aurelia-task-queue', 'aurelia-templating', 'aurelia-binding', 'aurelia-router', 'aurelia-pal'], function (exports, _aureliaDependencyInjection, _aureliaTaskQueue, _aureliaTemplating, _aureliaBinding, _aureliaRouter, _aureliaPal) {
   'use strict';
 
-  Object.defineProperty(exports, '__esModule', {
+  Object.defineProperty(exports, "__esModule", {
     value: true
   });
+  exports.FooterView = undefined;
 
-  var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
 
-  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+  var _dec, _dec2, _dec3, _dec4, _class;
 
-  var FooterView = (function () {
+  var FooterView = exports.FooterView = (_dec = (0, _aureliaTemplating.customElement)('footer-view'), _dec2 = (0, _aureliaTemplating.bindable)({
+    name: 'defaultView',
+    attribute: 'default-view',
+    defaultBindingMode: _aureliaBinding.bindingMode.oneTime
+  }), _dec3 = (0, _aureliaTemplating.bindable)({
+    name: 'defaultModule',
+    attribute: 'default-module',
+    defaultBindingMode: _aureliaBinding.bindingMode.oneTime
+  }), _dec4 = (0, _aureliaDependencyInjection.inject)(_aureliaPal.DOM.Element, _aureliaDependencyInjection.Container, _aureliaTemplating.CompositionEngine, _aureliaTemplating.ViewSlot, _aureliaTemplating.ViewResources, _aureliaTaskQueue.TaskQueue, _aureliaRouter.Router), _dec(_class = _dec2(_class = _dec3(_class = (0, _aureliaTemplating.noView)(_class = _dec4(_class = function () {
     function FooterView(element, container, compositionEngine, viewSlot, viewResources, taskQueue, router) {
-      _classCallCheck(this, _FooterView);
+      _classCallCheck(this, FooterView);
 
       this.element = element;
       this.container = container;
@@ -25,65 +38,46 @@ define(['exports', 'aurelia-dependency-injection', 'aurelia-task-queue', 'aureli
       router.registerFooterViewPort(this);
     }
 
-    _createClass(FooterView, [{
-      key: 'bind',
-      value: function bind() {
-        if (this.defaultModule) {
-          this.defaultInstruction = {
-            viewModel: this.defaultModule
-          };
-        } else if (this.defaultView) {
-          this.defaultInstruction = {
-            view: this.defaultView
-          };
-        } else {
-          throw new Error("default module or default view must be supplied");
-        }
+    FooterView.prototype.bind = function bind() {
+      if (this.defaultModule) {
+        this.defaultInstruction = {
+          viewModel: this.defaultModule
+        };
+      } else if (this.defaultView) {
+        this.defaultInstruction = {
+          view: this.defaultView
+        };
+      } else {
+        throw new Error("default module or default view must be supplied");
       }
-    }, {
-      key: 'setFooter',
-      value: function setFooter(footer) {
-        var _this = this;
+    };
 
-        var instructionBase = this.defaultInstruction;
-        if (footer) {
-          instructionBase = {
-            viewModel: footer
-          };
-        }
+    FooterView.prototype.setFooter = function setFooter(footer) {
+      var _this = this;
 
-        var instruction = createInstruction(this, instructionBase);
+      var instructionBase = this.defaultInstruction;
+      if (footer) {
+        instructionBase = {
+          viewModel: footer
+        };
+      }
 
-        if (this.currentInstruction) {
-          this.currentInstruction = instruction;
-          return;
-        }
+      var instruction = createInstruction(this, instructionBase);
 
+      if (this.currentInstruction) {
         this.currentInstruction = instruction;
-        this.taskQueue.queueMicroTask(function () {
-          return processInstruction(_this, _this.currentInstruction);
-        });
+        return;
       }
-    }]);
 
-    var _FooterView = FooterView;
-    FooterView = (0, _aureliaDependencyInjection.inject)(_aureliaPal.DOM.Element, _aureliaDependencyInjection.Container, _aureliaTemplating.CompositionEngine, _aureliaTemplating.ViewSlot, _aureliaTemplating.ViewResources, _aureliaTaskQueue.TaskQueue, _aureliaRouter.Router)(FooterView) || FooterView;
-    FooterView = (0, _aureliaTemplating.noView)(FooterView) || FooterView;
-    FooterView = (0, _aureliaTemplating.bindable)({
-      name: 'defaultModule',
-      attribute: 'default-module',
-      defaultBindingMode: _aureliaBinding.bindingMode.oneTime
-    })(FooterView) || FooterView;
-    FooterView = (0, _aureliaTemplating.bindable)({
-      name: 'defaultView',
-      attribute: 'default-view',
-      defaultBindingMode: _aureliaBinding.bindingMode.oneTime
-    })(FooterView) || FooterView;
-    FooterView = (0, _aureliaTemplating.customElement)('footer-view')(FooterView) || FooterView;
+      this.currentInstruction = instruction;
+      this.taskQueue.queueMicroTask(function () {
+        return processInstruction(_this, _this.currentInstruction);
+      });
+    };
+
     return FooterView;
-  })();
+  }()) || _class) || _class) || _class) || _class) || _class);
 
-  exports.FooterView = FooterView;
 
   function createInstruction(composer, instruction) {
     return Object.assign(instruction, {

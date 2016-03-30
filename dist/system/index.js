@@ -1,25 +1,7 @@
-System.register(['aurelia-router', './updatefooterstep'], function (_export) {
-  'use strict';
+'use strict';
 
+System.register(['aurelia-router', './updatefooterstep'], function (_export, _context) {
   var Router, PipelineProvider, UpdateFooterStep;
-
-  _export('configure', configure);
-
-  function configure(aurelia) {
-    Router.prototype.footer = null;
-    Router.prototype.registerFooterViewPort = function (footer) {
-      this.footer = footer;
-    };
-    Router.prototype.setFooter = function (footerModule) {
-      this.footer.setFooter(footerModule);
-    };
-
-    var filters = aurelia.container.get(PipelineProvider);
-    filters.addStep('precommit', UpdateFooterStep);
-
-    aurelia.globalResources(['footerview']);
-  }
-
   return {
     setters: [function (_aureliaRouter) {
       Router = _aureliaRouter.Router;
@@ -27,6 +9,23 @@ System.register(['aurelia-router', './updatefooterstep'], function (_export) {
     }, function (_updatefooterstep) {
       UpdateFooterStep = _updatefooterstep.UpdateFooterStep;
     }],
-    execute: function () {}
+    execute: function () {
+      function configure(aurelia) {
+        Router.prototype.footer = null;
+        Router.prototype.registerFooterViewPort = function (footer) {
+          this.footer = footer;
+        };
+        Router.prototype.setFooter = function (footerModule) {
+          this.footer.setFooter(footerModule);
+        };
+
+        var filters = aurelia.container.get(PipelineProvider);
+        filters.addStep('precommit', UpdateFooterStep);
+
+        aurelia.globalResources(['footerview']);
+      }
+
+      _export('configure', configure);
+    }
   };
 });

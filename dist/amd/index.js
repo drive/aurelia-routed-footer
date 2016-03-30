@@ -1,11 +1,10 @@
 define(['exports', 'aurelia-router', './updatefooterstep'], function (exports, _aureliaRouter, _updatefooterstep) {
   'use strict';
 
-  Object.defineProperty(exports, '__esModule', {
+  Object.defineProperty(exports, "__esModule", {
     value: true
   });
   exports.configure = configure;
-
   function configure(aurelia) {
     _aureliaRouter.Router.prototype.footer = null;
     _aureliaRouter.Router.prototype.registerFooterViewPort = function (footer) {
