@@ -28,7 +28,7 @@
     "babel-preset-stage-1": "^6.5.0",
     "conventional-changelog": "0.0.11",
     "del": "^1.2.1",
-    "gulp": "^3.9.0",
+    "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-bump": "^0.3.1",
     "gulp-changed": "^1.3.0",
@@ -41,7 +41,7 @@
     "gulp-yuidoc": "^0.1.2",
     "jasmine-core": "^2.3.4",
     "jshint-stylish": "^1.0.0",
-    "jspm": "^0.16.26",
+    "jspm": "^0.16.34",
     "karma": "^0.13.15",
     "karma-babel-preprocessor": "^6.0.1",
     "karma-chrome-launcher": "^0.2.1",
@@ -67,10 +67,6 @@
       "aurelia-task-queue": "npm:aurelia-task-queue@^1.0.0-beta.1.0.1",
       "aurelia-templating": "npm:aurelia-templating@^1.0.0-beta.1"
     },
-    "devDependencies": {
-      "babel": "npm:babel-core@^5.8.25",
-      "babel-runtime": "npm:babel-runtime@^5.8.25",
-      "core-js": "npm:core-js@^1.1.4"
-    }
+    "devDependencies": {}
   }
 }
