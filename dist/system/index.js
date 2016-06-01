@@ -1,6 +1,8 @@
 'use strict';
 
 System.register(['aurelia-router', './updatefooterstep'], function (_export, _context) {
+  "use strict";
+
   var Router, PipelineProvider, UpdateFooterStep;
   return {
     setters: [function (_aureliaRouter) {
