@@ -1,6 +1,8 @@
 'use strict';
 
 System.register(['aurelia-dependency-injection', 'aurelia-task-queue', 'aurelia-templating', 'aurelia-binding', 'aurelia-router', 'aurelia-pal'], function (_export, _context) {
+  "use strict";
+
   var Container, inject, TaskQueue, CompositionEngine, ViewSlot, ViewResources, customElement, bindable, noView, bindingMode, Router, DOM, _dec, _dec2, _dec3, _dec4, _class, FooterView;
 
   function _classCallCheck(instance, Constructor) {

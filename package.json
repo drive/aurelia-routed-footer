@@ -1,6 +1,6 @@
 {
   "name": "aurelia-routed-footer",
-  "version": "0.1.5",
+  "version": "0.2.5",
   "description": "Aurelia plugin for adding support to the router for setting a footer",
   "keywords": [
     "aurelia",
