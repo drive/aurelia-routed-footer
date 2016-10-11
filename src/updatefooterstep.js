@@ -18,11 +18,18 @@ function _findFooterModules(instruction) {
   footers.push(instruction.config.footer);
   let childInstruction = instruction.plan.default.childNavigationInstruction;
   while(childInstruction) {
-    footers.push(childInstruction.config.footer);
+    let footerModule = childInstruction.config.footer;
+    if(footerModule) {
+      let activationParam = childInstruction.params;
+      footers.push({
+        footerModule: footerModule,
+        activationParam: activationParam
+      });
+    }
     childInstruction = childInstruction.plan.default.childNavigationInstruction;
   }
 
-    return footers;
+  return footers;
 }
 
 // take the _deepest_ footer from those found

@@ -59,13 +59,14 @@ var FooterView = exports.FooterView = (_dec = (0, _aureliaTemplating.customEleme
     }
   };
 
-  FooterView.prototype.setFooter = function setFooter(footer) {
+  FooterView.prototype.setFooter = function setFooter(footerContext) {
     var _this = this;
 
     var instructionBase = this.defaultInstruction;
-    if (footer) {
+    if (footerContext) {
       instructionBase = {
-        viewModel: footer
+        viewModel: footerContext.footerModule,
+        model: footerContext.activationParam
       };
     }
 

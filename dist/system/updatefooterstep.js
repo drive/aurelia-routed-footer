@@ -16,7 +16,14 @@ System.register([], function (_export, _context) {
     footers.push(instruction.config.footer);
     var childInstruction = instruction.plan.default.childNavigationInstruction;
     while (childInstruction) {
-      footers.push(childInstruction.config.footer);
+      var footerModule = childInstruction.config.footer;
+      if (footerModule) {
+        var activationParam = childInstruction.params;
+        footers.push({
+          footerModule: footerModule,
+          activationParam: activationParam
+        });
+      }
       childInstruction = childInstruction.plan.default.childNavigationInstruction;
     }
 

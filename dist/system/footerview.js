@@ -89,13 +89,14 @@ System.register(['aurelia-dependency-injection', 'aurelia-task-queue', 'aurelia-
           }
         };
 
-        FooterView.prototype.setFooter = function setFooter(footer) {
+        FooterView.prototype.setFooter = function setFooter(footerContext) {
           var _this = this;
 
           var instructionBase = this.defaultInstruction;
-          if (footer) {
+          if (footerContext) {
             instructionBase = {
-              viewModel: footer
+              viewModel: footerContext.footerModule,
+              model: footerContext.activationParam
             };
           }
 

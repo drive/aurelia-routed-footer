@@ -44,11 +44,12 @@ export let FooterView = (_dec = customElement('footer-view'), _dec2 = bindable({
     }
   }
 
-  setFooter(footer) {
+  setFooter(footerContext) {
     let instructionBase = this.defaultInstruction;
-    if (footer) {
+    if (footerContext) {
       instructionBase = {
-        viewModel: footer
+        viewModel: footerContext.footerModule,
+        model: footerContext.activationParam
       };
     }
 

@@ -48,11 +48,12 @@ export class FooterView {
     }
   }
 
-  setFooter(footer) {
+  setFooter(footerContext) {
     let instructionBase = this.defaultInstruction;
-    if(footer) {
+    if(footerContext) {
       instructionBase = {
-        viewModel: footer
+        viewModel: footerContext.footerModule,
+        model: footerContext.activationParam
       };
     }
 

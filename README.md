@@ -20,3 +20,5 @@ configureRouter(config, router){
     this.router = router;
   }
 ```
+
+If the footer module defines an `activate()` callback, the same activation context that is passed to the _primary_ slot the router is activating will be passed to the footer callback.

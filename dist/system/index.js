@@ -9,8 +9,8 @@ System.register(['aurelia-router', './updatefooterstep'], function (_export, _co
     Router.prototype.registerFooterViewPort = function (footer) {
       this.footer = footer;
     };
-    Router.prototype.setFooter = function (footerModule) {
-      this.footer.setFooter(footerModule);
+    Router.prototype.setFooter = function (footerContext) {
+      this.footer.setFooter(footerContext);
     };
 
     var filters = aurelia.container.get(PipelineProvider);

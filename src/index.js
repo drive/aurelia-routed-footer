@@ -6,8 +6,8 @@ export function configure(aurelia) {
   Router.prototype.registerFooterViewPort = function(footer) {
     this.footer = footer;
   };
-  Router.prototype.setFooter = function(footerModule) {
-    this.footer.setFooter(footerModule);
+  Router.prototype.setFooter = function(footerContext) {
+    this.footer.setFooter(footerContext);
   };
 
   let filters = aurelia.container.get(PipelineProvider);
