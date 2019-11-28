@@ -16,7 +16,7 @@ export class UpdateFooterStep {
 function _findFooterModules(instruction) {
   let footers = [];
   footers.push(instruction.config.footer);
-  let childInstruction = instruction.plan.default.childNavigationInstruction;
+  let childInstruction = instruction.plan.default ? instruction.plan.default.childNavigationInstruction : null;
   while (childInstruction) {
     let footerModule = childInstruction.config.footer;
     if (footerModule) {
@@ -26,7 +26,7 @@ function _findFooterModules(instruction) {
         activationParam: activationParam,
       });
     }
-    childInstruction = childInstruction.plan.default.childNavigationInstruction;
+    childInstruction = childInstruction.plan.default ? childInstruction.plan.default.childNavigationInstruction : null;
   }
 
   return footers;
