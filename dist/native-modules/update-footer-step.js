@@ -13,7 +13,7 @@ export { UpdateFooterStep };
 function _findFooterModules(instruction) {
     var footers = [];
     footers.push(instruction.config.footer);
-    var childInstruction = instruction.plan.default.childNavigationInstruction;
+    var childInstruction = instruction.plan.default ? instruction.plan.default.childNavigationInstruction : null;
     while (childInstruction) {
         var footerModule = childInstruction.config.footer;
         if (footerModule) {
@@ -23,7 +23,7 @@ function _findFooterModules(instruction) {
                 activationParam: activationParam,
             });
         }
-        childInstruction = childInstruction.plan.default.childNavigationInstruction;
+        childInstruction = childInstruction.plan.default ? childInstruction.plan.default.childNavigationInstruction : null;
     }
     return footers;
 }
